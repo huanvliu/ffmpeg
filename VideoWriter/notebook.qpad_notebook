@@ -1,0 +1,26 @@
+v2
+{
+ "cells": [
+  {
+   "m_language": "Unix Shell Script",
+   "m_cell_id": 0,
+   "m_button_name": "build test1",
+   "in_m_current_wrap_width": 512,
+   "in_m_enable_wrapping": 0,
+   "m_project_hotkey": "F5"
+  }
+ ],
+ "m_last_focus_cell_id": 0
+}
+=====í¯¿í¿¿=====
+#!/bin/sh
+#[interactive]
+#build script for the project
+#[button: build test1]
+SERVER=root@54.222.172.87
+export PORT_NUMBER=22
+export PORT="ssh -p $PORT_NUMBER"
+
+
+rsync --exclude .git/ -e "$PORT"  -avz ./ $SERVER:~/VideoWriter
+
